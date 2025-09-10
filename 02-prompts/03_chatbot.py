@@ -26,6 +26,8 @@ while True:
     if user.lower() in ["exit", "quit", "q"]:
         print("Exiting the chatbot. Goodbye!")
         break
+
+    # Invoke the chat model
     result = chat_model.invoke(chats)
 
     # Append AI response to chat history
