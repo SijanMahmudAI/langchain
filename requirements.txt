@@ -30,3 +30,6 @@ streamlit
 
 # Type Validation
 pydantic
+
+# Graph Visualization
+grandalf

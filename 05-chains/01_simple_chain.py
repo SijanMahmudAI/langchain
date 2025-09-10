@@ -13,17 +13,10 @@ llm = HuggingFaceEndpoint(repo_id="deepseek-ai/DeepSeek-R1-0528", task="text-gen
 # Initialize the Hugging Face chat model
 model = ChatHuggingFace(llm=llm)
 
-# 1st prompt
-template1 = PromptTemplate(
-    template="Write a detailed report on {topic}",
+# Prompt template
+template = PromptTemplate(
+    template="Generate 5 lines of interesting facts about {topic}",
     input_variables=["topic"],
-    validate_template=True
-)
-
-# 2nd prompt
-template2 = PromptTemplate(
-    template="Write a 5 line summary on the following text. /n {text}",
-    input_variables=["text"],
     validate_template=True
 )
 
@@ -31,10 +24,13 @@ template2 = PromptTemplate(
 parser = StrOutputParser()
 
 # create a chain
-chain = template1 | model | parser | template2 | model | parser
+chain = template | model | parser 
 
 # invoke the chain
-result = chain.invoke({"topic": "Artificial Intelligence"})
+result = chain.invoke({"topic": "Cricket"})
 
 # Print the results
-print("Summary: ", result)
+print(result)
+
+# Print the chain graph
+chain.get_graph().print_ascii()

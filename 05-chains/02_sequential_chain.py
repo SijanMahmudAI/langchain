@@ -38,3 +38,6 @@ result = chain.invoke({"topic": "Artificial Intelligence"})
 
 # Print the results
 print("Summary: ", result)
+
+# Print the chain graph
+chain.get_graph().print_ascii()
