@@ -47,14 +47,18 @@ prompt3 = PromptTemplate(
     input_variables=['feedback']
 )
 
+# Create the branch chain
 branch_chain = RunnableBranch(
     (lambda x:x.sentiment == 'positive', prompt2 | model | parser),
     (lambda x:x.sentiment == 'negative', prompt3 | model | parser),
     RunnableLambda(lambda x: "could not find sentiment")
 )
 
+# Combine the classifier chain and branch chain
 chain = classifier_chain | branch_chain
 
+# Print the response
 print(chain.invoke({'feedback': 'This is a beautiful phone'}))
 
+# Visualize the chain
 chain.get_graph().print_ascii()

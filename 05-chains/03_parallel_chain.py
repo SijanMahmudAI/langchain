@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain.schema.runnable import Runnableparallel
+from langchain.schema.runnable import RunnableParallel
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -40,7 +40,7 @@ prompt3 = PromptTemplate(
 parser = StrOutputParser()
 
 # Parallel chain to run two prompts and models simultaneously
-parallel_chain = Runnableparallel(
+parallel_chain = RunnableParallel(
     {
         "notes": prompt1 | model1 | parser,
         "quiz": prompt2 | model2 | parser
