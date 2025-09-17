@@ -38,3 +38,6 @@ grandalf
 
 # PDF Handling
 pypdf
+
+# Vector Databases
+chromadb
