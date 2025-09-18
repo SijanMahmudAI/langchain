@@ -41,3 +41,7 @@ pypdf
 
 # Vector Databases
 chromadb
+faiss-cpu
+
+# Retrievers
+wikipedia
