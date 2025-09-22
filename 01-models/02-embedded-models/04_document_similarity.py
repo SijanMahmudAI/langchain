@@ -7,7 +7,7 @@ import numpy as np
 load_dotenv()
 
 # embedding = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=300)
-embedding = HuggingFaceEmbeddings(model_name = "sentence-transformers/all-MiniLM-L6-v2")
+embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 # generate a list of strings about 5 indian crickerets
 documents = [
