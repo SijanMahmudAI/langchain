@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize the Google chat model
-model = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+model = ChatGoogleGenerativeAI(model="gemini-2.5-pro")
 
 # Get prompt from the user input
 prompt = input("Enter your prompt: ")

@@ -39,9 +39,12 @@ grandalf
 # PDF Handling
 pypdf
 
-# Vector Databases
+# Vector Stores
 chromadb
 faiss-cpu
 
 # Retrievers
 wikipedia
+
+# Transcript Extraction
+youtube-transcript-api
