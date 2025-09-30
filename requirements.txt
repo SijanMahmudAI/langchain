@@ -48,3 +48,6 @@ wikipedia
 
 # Transcript Extraction
 youtube-transcript-api
+
+# Tools
+duckduckgo-search

@@ -13,16 +13,11 @@ from dotenv import load_dotenv
 # Load environment variables from a .env file
 load_dotenv()
 
-
-
 # Initialize the chat model
 model = ChatGoogleGenerativeAI(model="gemini-2.5-pro")
 
 # Initialize a StrOutputParser
 parser = StrOutputParser()
-
-
-
 
 # Get the video url here:
 video_url = input("Enter the YouTube video URL: ")
@@ -66,15 +61,13 @@ embedding = HuggingFaceEmbeddings(model_name = "sentence-transformers/all-MiniLM
 # Create a FAISS vector store from the chunks and embeddings
 vectorstore = FAISS.from_documents(chunks, embedding)
 
-
-
-
 # Create a retriever from the vector store
 retriever = vectorstore.as_retriever(
     search_type="similarity", 
     search_kwargs={"k": 4}
 )
 
+# Function to format retrieved documents
 def format_docs(retrieved_docs):
     context ="\n\n".join([doc.page_content for doc in retrieved_docs])
     return context
@@ -93,11 +86,9 @@ prompt = PromptTemplate(
     input_variables=["context", "question"]
 )
 
-
-
-
 # Loop to interact with the chatbot
 while True:
+    
     # Get the user query
     user= input("Query: ")
 
