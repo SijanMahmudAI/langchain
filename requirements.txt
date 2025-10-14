@@ -51,4 +51,7 @@ youtube-transcript-api
 
 # Tools
 duckduckgo-search
+ddgs
+
+
 
