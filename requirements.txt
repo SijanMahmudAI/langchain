@@ -1,12 +1,12 @@
 # LangChain Core
-langchain
-langchain-core
-langchain-community
-langchain-experimental
+langchain 
+langchain-core  
+langchain-community 
+langchain-experimental 
 
 # OpenAI Integration
 langchain-openai
-openai
+openai 
 
 # Anthropic Integration
 langchain-anthropic
